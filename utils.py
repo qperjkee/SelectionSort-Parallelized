@@ -1,4 +1,5 @@
 import numpy as np
+
 import Car
 import SelectionSort
 
@@ -26,7 +27,7 @@ def warm_up_processor(array_size: int, iterations: int):
     print(f"Performing {iterations} iterations of sorting...")
     for i in range(iterations):
         SelectionSort.sort(array, 5)
-        print(f"  ✔️ Iteration {i + 1} completed successfully.")
+        print(f"  ✅ Iteration {i + 1} completed successfully.")
     
     print("Warming up process completed.")
     print("=" * 50)

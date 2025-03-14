@@ -1,5 +1,6 @@
 import sys
 import multiprocessing as mp
+
 from utils import validate_array_division, split_array
 from SelectionSort import selection_sort
 from Merge import merge_sorted_arrays

@@ -1,4 +1,5 @@
 import sys
+
 from utils import validate_array_division, split_array
 from Merge import merge_sorted_arrays
 
