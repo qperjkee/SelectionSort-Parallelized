@@ -1,4 +1,4 @@
-def merge_two_arrays(left, right):
+def merge_two_arrays(left: list, right: list) -> list:
     merged = []
     left_index = right_index = 0
     
@@ -18,7 +18,7 @@ def merge_two_arrays(left, right):
     
     return merged
 
-def merge_sorted_arrays(arrays):
+def merge_sorted_arrays(arrays: list[list]):
     if len(arrays) == 0:
         return []
     
