@@ -4,6 +4,8 @@ from typing import Callable
 
 from Car import Car
 from utils import check_sorted_array
+import SelectionSort
+import ParallelSelectionSort
 
 
 def benchmark_sorting_algorithm(sorting_method: Callable, array_length: int, iterations: int, chunks: int) -> float:
@@ -50,5 +52,5 @@ def benchmark_sorting_algorithm(sorting_method: Callable, array_length: int, ite
     
     return avg_time
 
-if __name__ == 'main':
-    ...
+if __name__ == '__main__':
+    benchmark_sorting_algorithm(ParallelSelectionSort.parallel_selection_sort, 10000, 5, 10)

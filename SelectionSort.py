@@ -24,8 +24,8 @@ def sort(array: list, num_chunks: int) -> list | None:
     
     chunks = split_array(array, num_chunks)
     
+    sorted_chunks = []
     for chunk in chunks:
-        selection_sort(chunk)
+        sorted_chunks.append(selection_sort(chunk))
     
-    return merge_sorted_arrays(chunks)
-
+    return merge_sorted_arrays(sorted_chunks)

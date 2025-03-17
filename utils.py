@@ -1,9 +1,8 @@
 import numpy as np
 
 import Car
-import SelectionSort
 
-def validate_partition_size(data: list, partition_count: int) -> bool:
+def validate_array_division(data: list, partition_count: int) -> bool:
     if len(data) % partition_count != 0:
         print("Error: Cannot divide array into equal partitions with current parameters.")
         return False
@@ -14,11 +13,12 @@ def split_array(data: list, partition_count: int):
 
 def check_sorted_array(array: list) -> bool:
     for i in range(len(array) - 1):
-        if array[i + 1] < array[i]:
+        if array[i] > array[i + 1]:
             return False
     return True
 
 def warm_up_processor(array_size: int, iterations: int):
+    import SelectionSort
     print("=" * 50)
     print("Starting CPU warm-up process...")
     print(f"Creating an array of {array_size} 'Car' objects for testing.")

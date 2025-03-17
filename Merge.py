@@ -3,7 +3,7 @@ def merge_two_arrays(left: list, right: list) -> list:
     left_index = right_index = 0
     
     while left_index < len(left) and right_index < len(right):
-        if left[left_index] < right[right_index]:
+        if left[left_index] <= right[right_index]:
             merged.append(left[left_index])
             left_index += 1
         else:

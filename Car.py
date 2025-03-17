@@ -24,29 +24,26 @@ class Car:
     def __lt__(self, other) -> bool:
         if not isinstance(other, Car):
             return False
-        if self._engine_power == other._engine_power:
-            return self._max_speed < other._max_speed
-        elif self._max_speed == other._max_speed:
-            return self._fuel_consumption > other._fuel_consumption
-        else:
+        if self._engine_power != other._engine_power:
             return self._engine_power < other._engine_power
-
-    def __le__(self, other) -> bool:
-        if not isinstance(other, Car):
-            return False
-        if self._engine_power == other._engine_power:
-            return self._max_speed <= other._max_speed
-        elif self._max_speed == other._max_speed:
-            return self._fuel_consumption <= other._fuel_consumption
-        else:
-            return self._engine_power <= other._engine_power
+        if self._max_speed != other._max_speed:
+            return self._max_speed < other._max_speed
+        return self._fuel_consumption > other._fuel_consumption
 
     def __gt__(self, other) -> bool:
         if not isinstance(other, Car):
             return False
-        if self._engine_power == other._engine_power:
-            return self._max_speed > other._max_speed
-        elif self._max_speed == other._max_speed:
-            return self._fuel_consumption < other._fuel_consumption
-        else:
+        if self._engine_power != other._engine_power:
             return self._engine_power > other._engine_power
+        if self._max_speed != other._max_speed:
+            return self._max_speed > other._max_speed
+        return self._fuel_consumption < other._fuel_consumption
+
+    def __le__(self, other) -> bool:
+        return self.__lt__(other) or self.__eq__(other)
+
+    def __ge__(self, other) -> bool:
+        return self.__gt__(other) or self.__eq__(other)
+
+    def __ne__(self, other) -> bool:
+        return not self.__eq__(other)
