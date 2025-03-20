@@ -59,10 +59,10 @@ def run_tests(array_sizes: list[int], iterations: int, chunks: list[int],
               plot_results: bool = True, warm_up: bool = True):
     
     if warm_up:
-        warm_up_processor(1000, 2)
+        warm_up_processor(10000, 10)
     
-    default_array_size = array_sizes[0] if test_arr_size else 10000
-    default_chunks = chunks[0] if test_chunks else 10
+    default_array_size = array_sizes[0] if test_arr_size else 15000
+    default_chunks = chunks[0] if test_chunks else 5
     
     results = {}
     
@@ -183,8 +183,8 @@ def plot_test_results(results, test_arr_size, test_chunks):
 
 
 def main():
-    run_tests(array_sizes=[1000, 2500, 5000, 10000, 15000, 20000, 25000], iterations=5, chunks=[1, 2, 5, 10, 20, 25, 50],
-              test_arr_size=True, test_chunks=False, plot_results=True, warm_up=False)
+    run_tests(array_sizes=[1000, 2500, 5000, 10000, 15000, 20000, 25000], iterations=10, chunks=[1, 2, 5, 10, 20, 25, 50],
+              test_arr_size=False, test_chunks=True, plot_results=True, warm_up=True)
 
 if __name__ == '__main__':
     main()

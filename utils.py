@@ -1,6 +1,6 @@
 import numpy as np
 
-import Car
+from Car import Car
 
 def validate_array_division(data: list, partition_count: int) -> bool:
     if len(data) % partition_count != 0:
